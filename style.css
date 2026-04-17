@@ -490,6 +490,9 @@ footer .footer-bottom {
   display: flex; flex-direction: column; gap: 0.5rem;
   font-size: 0.875rem; color: var(--dark-muted);
 }
+@media (max-width: 767px) {
+  footer .footer-bottom { margin-top: 5px; }
+}
 @media (min-width: 768px) {
   footer .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
 }
