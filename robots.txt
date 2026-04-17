@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://build.aionexecutive.ch/sitemap.xml
