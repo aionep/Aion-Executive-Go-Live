@@ -355,6 +355,7 @@ main { padding-top: var(--nav-h); }
 
 /* ── Hero sections ─────────────────────────────────────────── */
 .hero-section { padding: 3rem 1rem; }
+.hero-section .text-dark-muted { color: #ffffff; }
 @media (min-width: 768px) { .hero-section { padding: 5rem 1rem; } }
 
 /* ── Grid helpers ──────────────────────────────────────────── */
