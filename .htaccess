@@ -1,0 +1,8 @@
+# ── www-Redirect (www → non-www, permanent 301) ───────────────
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.aionexecutive\.ch$ [NC]
+RewriteRule ^(.*)$ https://aionexecutive.ch/$1 [R=301,L]
+
+# ── HTTPS erzwingen (falls nicht bereits vom Server gemacht) ───
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
