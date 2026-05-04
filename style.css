@@ -221,7 +221,7 @@ h3 { font-size: 1.125rem; }
 #site-header nav { display: flex; align-items: center; gap: 2rem; margin-left: auto; margin-right: 2rem; }
 #site-header nav a {
   font-size: 0.9375rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.025em;
   color: #fff;
   transition: color 0.2s;
@@ -233,7 +233,7 @@ h3 { font-size: 1.125rem; }
   background: var(--primary);
   color: #fff;
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 400;
   padding: 0.625rem 1.25rem;
   border-radius: var(--radius);
   transition: opacity 0.2s;
@@ -270,7 +270,7 @@ h3 { font-size: 1.125rem; }
 }
 #mobile-nav a {
   font-size: 0.875rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #fff;
   letter-spacing: 0.025em;
 }
@@ -280,7 +280,7 @@ h3 { font-size: 1.125rem; }
   background: var(--primary);
   color: #fff;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   padding: 0.625rem 1.25rem;
   border-radius: var(--radius);
   text-align: center;
@@ -355,6 +355,7 @@ main { padding-top: var(--nav-h); }
 
 /* ── Hero sections ─────────────────────────────────────────── */
 .hero-section { padding: 3rem 1rem; }
+.hero-section .text-dark-muted { color: #ffffff; }
 @media (min-width: 768px) { .hero-section { padding: 5rem 1rem; } }
 
 /* ── Grid helpers ──────────────────────────────────────────── */
@@ -375,16 +376,25 @@ main { padding-top: var(--nav-h); }
 
 /* Quote section with photo */
 .quote-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  min-height: 400px;
+  display: flex;
+  flex-direction: column;
 }
+.quote-photo {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  order: -1;
+}
+.quote-photo img { width: 100%; height: 400px; object-fit: cover; object-position: 25% 20%; }
 @media (min-width: 768px) {
-  .quote-grid { grid-template-columns: 1fr 350px; }
-  .quote-grid .quote-photo { display: block !important; }
+  .quote-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    min-height: 400px;
+  }
+  .quote-photo { max-height: none; order: 0; }
+  .quote-photo img { height: 100%; }
 }
-.quote-photo { display: none; }
-.quote-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 25% 20%; }
 .quote-text {
   display: flex; flex-direction: column; justify-content: center;
   text-align: center; padding: 4rem 2rem;
