@@ -29,6 +29,25 @@ document.querySelectorAll('#site-header nav a, #mobile-nav a').forEach(a => {
   }
 });
 
+// ── Google Analytics 4 ─────────────────────────────────────
+const GA_ID = 'G-L9994HLVNF';
+
+function loadGA() {
+  if (window._gaLoaded) return; // Nicht doppelt laden
+  window._gaLoaded = true;
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+}
+
 // ── Cookie Consent ─────────────────────────────────────────
 const CONSENT_KEY = 'cookie-consent';
 const banner = document.getElementById('cookie-banner');
@@ -42,6 +61,7 @@ function showBanner() {
 function acceptCookies(value) {
   localStorage.setItem(CONSENT_KEY, value);
   if (banner) banner.classList.remove('show');
+  if (value === 'all') loadGA(); // GA nur bei voller Zustimmung laden
 }
 
 if (banner) {
@@ -50,6 +70,11 @@ if (banner) {
   const btnEssential = banner.querySelector('.btn-essential');
   if (btnAccept) btnAccept.addEventListener('click', () => acceptCookies('all'));
   if (btnEssential) btnEssential.addEventListener('click', () => acceptCookies('essential'));
+}
+
+// GA laden falls Consent bereits früher gegeben wurde
+if (localStorage.getItem(CONSENT_KEY) === 'all') {
+  loadGA();
 }
 
 // ── FAQ Accordion ──────────────────────────────────────────
