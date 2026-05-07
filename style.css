@@ -1,21 +1,28 @@
 /* ── Fonts ─────────────────────────────────────────────────── */
 @font-face {
-  font-family: 'Gotham';
-  src: url('assets/fonts/Gotham-Light.otf') format('opentype');
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Gotham';
-  src: url('assets/fonts/Gotham-Book.otf') format('opentype');
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Gotham';
-  src: url('assets/fonts/Gotham-Bold.otf') format('opentype');
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -44,7 +51,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Gotham', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
